@@ -1,0 +1,15 @@
+body{
+	background-color: #4682B4;
+}
+h1{
+	padding: auto;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+button{
+	float: left;
+	color: #4682b4;
+	background-color: white;
+	height: 25px;
+}
