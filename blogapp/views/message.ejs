@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<style type="text/css">
+		form{
+			padding: 10px;
+			padding-top: 50px;
+		}
+		body{
+			color: white;
+			background-color: #4682b4;
+		}
+	</style>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">BLOG APP</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active active">
+	        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/blogs">Blogs</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/new_blog">New Post</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/new_messages">Contact us</a>
+	      </li>
+	    </ul>
+	    <ul class="navbar-nav ml-auto">
+    		<% if(!currentUser){ %>
+	    		<li class="nav-item active">
+	      			<a class="nav-link" href="/register">Register</a>
+	    		</li>
+	    		<li class="nav-item active">
+	      			<a class="nav-link" href="/login">Login</a>
+	    		</li>
+    		
+    		<% }else{%>
+	    		<li class="nav-item active">
+	      			<a class="nav-link" href="/logout">Logout</a>
+	    		</li>
+	    		<li class="nav-item active">
+	      			<a class="nav-link" href="/messages">Messages</a>
+	    		</li>
+    		<% }%>
+    	</ul>
+	  </div>
+	</nav>
+
+
+
+
+
+	<div>
+		<div class="container">
+<!-- 		<h1>
+			NEW POST
+		</h1> -->
+		<!-- <form action="/blogs">
+			<div>
+			<label for="img">Image</label>
+			<input type="text" name="img" placeholder="your image link here" id="img">
+			</div>
+			<div>
+			<label for="title">Title</label>
+			<input type="text" name="title" placeholder="title" id="title">
+			</div>
+			<div>
+			<label for="desciption">Description</label>
+			<textarea placeholder="desciption" id="desciption" name="desciption"></textarea>
+			</div>
+			<input type="submit" >
+		</form> -->
+
+
+
+		<form action="/messages" method="POST">
+		  <legend><b>We shall respond as quick as possible</b></legend>
+		  <div class="form-group">
+		    <label for="name">Name</label>
+		    <input type="text" class="form-control" id="img" aria-describedby="emailHelp" placeholder="Name of person/company" name="message[name]">
+		  </div>
+		  <div class="form-group">
+		    <label for="topic">Topic</label>
+		    <input type="text" class="form-control" id="title" placeholder="Topic" name="message[topic]">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlTextarea1">Description</label>
+		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Desciption" name="message[body]"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+
+
+
+		</div>
+	</div>
+</body>
+</html>
